@@ -1,4 +1,5 @@
 using scopehal
+using Plots
 
 t = scopehal.CreateTransport("null", "")
 @assert scopehal.IsConnected(t)
@@ -19,4 +20,4 @@ end
 
 println("ready to get data")
 d = scopehal.AnalogWaveformData(scopehal.GetData(ch, 0))
-println(d)
+plot(d)
